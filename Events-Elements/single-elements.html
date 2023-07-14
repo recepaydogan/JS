@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="card-header">
+      <h3 class="card-title h1" id="title">to do app</h3>
+    </div>
+
+    <ul id="task-list">
+      <li>görev 1</li>
+      <li>görev 2</li>
+      <li>görev 3</li>
+    </ul>
+    <script>
+      let sonuc;
+
+      sonuc = document.getElementById("title");
+      sonuc = document.getElementById("title").classList;
+      sonuc = document.getElementById("title").id;
+      sonuc = document.getElementById("title").style.color = "purple";
+      sonuc = document.getElementById("title").innerText = "Changed Text";
+      sonuc = document.getElementById("title").innerHTML =
+        "<p> inner html text </p>";
+
+      sonuc = document.querySelector(".card-header").className;
+      sonuc = document.querySelector("li");
+      sonuc = document.querySelector("li:last-child");
+      sonuc = document.querySelector("li:nth-child(2)");
+      console.log(sonuc);
+    </script>
+  </body>
+</html>

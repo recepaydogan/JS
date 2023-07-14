@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+  </head>
+  <style>
+    .dropdown-toggle::after {
+      display: none;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="row w-50 mt-5">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">to do app</div>
+            <div class="card-body">
+              <form action="">
+                <div class="input-group">
+                  <input type="text" id="txtTaskName" class="form-control" />
+                  <button type="submit" id="btnAddNewTask" class="btn btn-dark">
+                    Add
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="card mt-3">
+            <div class="card-header d-flex">
+              <button id="btnDelete" class="btn btn-danger btn-sm ms-auto">
+                Delete
+              </button>
+            </div>
+            <ul id="task-list" class="list-group list-group-flush"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      let taskList = [{ id: 1, taskName: "Task 1" }];
+      display();
+      function display() {
+        let ul = document.getElementById("task-list");
+        ul.innerHTML = "";
+        for (let task of taskList) {
+          let li = `
+            <li class="task list-group-item align-items-center  d-flex">
+                <div class="form-check">
+                    <input type="checkbox" id="${task.id}" class="form-check-input">
+                    <label for="${task.id}" class="form-check-label">${task.taskName}</label>
+                </div>
+                <div class="dropdown ms-auto">
+                    <button class="btn btn-link dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <i class="fa-solid fa-ellipsis"></i>
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a onclick="deleteTask()" class="dropdown-item" href="#"><i class="fa-solid fa-pen-to-square"></i> Delete</a></li>
+                      <li><a class="dropdown-item" href="#"><i class="fa-sharp fa-solid fa-trash"></i> Edit</a></li>
+
+                    </ul>
+                </div>
+            </li>
+        `;
+          ul.insertAdjacentHTML("beforeend", li);
+        }
+      }
+
+      // ADDİNG NEW TASK
+      function newTask(event) {
+        let taskAdder = document.getElementById("txtTaskName");
+        if (taskAdder.value == "") {
+          alert("You cannot add an empty task");
+        } else {
+          taskList.push({ id: taskList.length + 1, taskName: taskAdder.value });
+          display();
+          taskAdder.value = "";
+          event.preventDefault();
+        }
+      }
+
+      document
+        .querySelector("#btnAddNewTask")
+        .addEventListener("click", newTask);
+
+      //   DELETİNG TASKS
+      function deleteTask(itemID) {
+        let deletedItemID;
+        // deletedItemID = taskList.findIndex(function (ta) {
+        //   return ta.id == id;
+        // });
+
+        deletedItemID = taskList.findIndex((dlt) => dlt.id == itemID);
+        taskList.splice(deletedItemID, 1);
+        display();
+      }
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+      integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

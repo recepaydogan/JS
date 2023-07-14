@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row w-50 mt-5">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">to do app</div>
+            <div class="card-body">
+              <form action="">
+                <div class="input-group">
+                  <input type="text" id="txtTaskName" class="form-control" />
+                  <button type="submit" id="btnAddNewTask" class="btn btn-dark">
+                    Add
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="card mt-3">
+            <div class="card-header d-flex">
+              <button id="btnDelete" class="btn btn-danger btn-sm ms-auto">
+                Delete
+              </button>
+            </div>
+            <ul id="task-list" class="list-group list-group-flush"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      let taskList = [{ id: 1, taskName: "Task 1" }];
+      display();
+      function display() {
+        let ul = document.getElementById("task-list");
+        ul.innerHTML = "";
+        for (let task of taskList) {
+          let li = `
+          <li class="task list-group-item">
+              <div class="form-check">
+                  <input type="checkbox" id="${task.id}" class="form-check-input">
+                  <label for="${task.id}" class="form-check-label">${task.taskName}</label>
+              </div>
+          </li>
+      `;
+          ul.insertAdjacentHTML("beforeend", li);
+        }
+      }
+
+      function ClearedTask(event) {
+        event.preventDefault();
+      }
+      function newTask(event) {
+        let taskAdder = document.getElementById("txtTaskName");
+        if (taskAdder.value == "") {
+          alert("You cannot add an empty task");
+        } else {
+          taskList.push({ id: taskList.length + 1, taskName: taskAdder.value });
+          display();
+          taskAdder.value = "";
+          event.preventDefault();
+        }
+      }
+
+      document
+        .querySelector("#btnAddNewTask")
+        .addEventListener("click", newTask);
+      document
+        .querySelector("#btnDelete")
+        .addEventListener("click", ClearedTask);
+
+      document
+        .querySelector("#btnAddNewTask")
+        .addEventListener("keypress", function () {
+          if (event.key == "CAPS LOCK") {
+            document.getElementById("btnAddNewTask").click();
+          }
+        });
+    </script>
+  </body>
+</html>

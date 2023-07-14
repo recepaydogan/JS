@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="card-header">
+      <h3 class="card-title h1" id="title">to do app</h3>
+    </div>
+
+    <ul id="task-list">
+      <li class="task">görev 1</li>
+      <li class="task">görev 2</li>
+      <li class="task">görev 3</li>
+    </ul>
+    <ul id="task-list2">
+      <li class="task">görev 1</li>
+      <li class="task">görev 2</li>
+      <li class="task">görev 3</li>
+    </ul>
+    <script>
+      let taskList;
+
+      taskList = document.getElementsByClassName("task");
+      //   var pickedList = document.getElementById("task-list");
+      //   taskList = pickedList.getElementsByTagName("li");
+      taskList = document.querySelectorAll("#task-list li");
+
+      for (let i = 0; i < taskList.length; i++) {
+        taskList[i].style.color = "red";
+      }
+    </script>
+  </body>
+</html>
