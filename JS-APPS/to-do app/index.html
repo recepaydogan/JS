@@ -37,9 +37,8 @@
         background-color: #414141;
         border: #484848;
         padding-left: 2rem !important;
-        transition: 0.4s;
       }
-      ul li.checked::after {
+      .tasks.checked::after {
         content: "";
         position: absolute;
         border-color: #fff;
@@ -72,10 +71,16 @@
       }
       .checked {
         text-decoration: line-through;
+      }
+      .checked-color {
         background-color: #3c3c3c;
       }
       .filtered {
         display: none !important;
+      }
+      .tasks {
+        cursor: pointer;
+        font-size: 18px;
       }
     </style>
   </head>
