@@ -6,7 +6,7 @@ const search = document.querySelector(".search input");
 generateTemplate = (e) => {
   const li = ` 
         <li class="list-group-item mb-3 d-flex justify-content-between align-items-center">
-          ${e}
+           <span>${e} </span>
           <i class="far fa-trash-alt delete"></i>
         </li>`;
 
@@ -34,7 +34,8 @@ list.addEventListener("click", (e) => {
     e.target.parentElement.remove();
   }
   if (e.target.tagName === "LI") {
-    e.target.classList.toggle("checked");
+    e.target.parentElement.classList.toggle("checked-color");
+    e.target.children[0].classList.toggle("checked");
   }
 });
 
