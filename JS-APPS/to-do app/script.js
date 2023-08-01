@@ -37,6 +37,9 @@ list.addEventListener("click", (e) => {
     e.target.parentElement.classList.toggle("checked-color");
     e.target.children[0].classList.toggle("checked");
   }
+  if (e.target.tagName === "SPAN") {
+    e.target.classList.toggle("checked");
+  }
 });
 
 // FILTER THE TASK
