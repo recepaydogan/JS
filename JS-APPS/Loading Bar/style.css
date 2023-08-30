@@ -1,0 +1,33 @@
+body{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.wrapper{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: white;
+}
+.inner-wrapper{
+   text-align: center;
+    width: 500px;
+    position: relative;
+}
+.bar{
+    position: absolute;
+    border-radius: 8px;
+    border: none;
+    height: 10px;
+}
+.bar-ground{
+    width: 100%;
+    background-color: white;
+}
+.bar-top{
+    width: 0%;
+    background-color: red;
+}
