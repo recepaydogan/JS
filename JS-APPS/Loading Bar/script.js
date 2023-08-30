@@ -1,6 +1,6 @@
 const counter = document.querySelector(".counter");
 const barTop = document.querySelector(".bar-top");
-let number = 30;
+let number = 0;
 
 const updateNumber = () => {
   counter.textContent = number + "%";
