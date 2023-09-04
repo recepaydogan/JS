@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Currency Converter App</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="inner-wrapper">
+        <h1>Currency Converter</h1>
+        <div class="currency-container">
+          <div class="first-currency">
+            <select name="" id="firstCurrency">
+              <option value="USD" selected>USD</option>
+              <option value="EUR">EUR</option>
+              <option value="TRY">TL</option>
+              <option value="AUD">AUD</option>
+              <option value="CAD">CAD</option>
+            </select>
+          </div>
+          <input type="number" id="count" value="1" min="0" />
+        </div>
+        <div class="currency-container">
+          <div class="second-currency">
+            <select id="secondCurrency">
+              <option value="TRY" selected>TL</option>
+              <option value="USD">USD</option>
+              <option value="EUR">EUR</option>
+              <option value="AUD">AUD</option>
+              <option value="CAD">CAD</option>
+            </select>
+          </div>
+          <span id="equal"></span>
+        </div>
+
+        <p class="exchange-rate" id="exchangeRate">
+          Lorem ipsum dolor sit amet.
+        </p>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
