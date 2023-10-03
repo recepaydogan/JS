@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator App</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(to top, #000000, #434343);
+      }
+      .calculator {
+        width: 580px;
+      }
+      .calculatorTitle {
+        text-align: right;
+        color: #252525;
+        background-color: #f4fcd9;
+        border-radius: 10px 10px 0 0;
+      }
+
+      .calculatorTitle .output {
+        padding: 25px;
+        font-size: 45px;
+        font-weight: 100;
+        overflow-x: auto;
+      }
+
+      .calculatorButtons {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        padding: 16px;
+        background-color: #f4fcd9;
+        border-radius: 0 0 10px 10px;
+      }
+
+      .result {
+        grid-area: 2/4 / span 6;
+      }
+      button {
+        font-size: 22px;
+        margin: 5px;
+        cursor: pointer;
+        padding: 15px;
+        outline: none;
+      }
+
+      /* NUMBER BUTTONS */
+
+      #numbers {
+        border: 1px solid #252525;
+        background-color: #fff;
+        color: #252525;
+        border-radius: 25px;
+      }
+      #numbers:hover {
+        background-color: #252525;
+        color: #fff;
+      }
+      #numbers:active {
+        background-color: #fff;
+        color: #252525;
+      }
+      /* RESULT BUTTON */
+      .result {
+        background-color: #4dda34;
+      }
+
+      /* OPERATORS */
+      .operator {
+        font-size: 32px;
+        padding: 20px;
+        background-color: #252525;
+        color: #fff;
+        border-radius: 14px;
+      }
+      .operator:hover {
+        background-color: #fff;
+        color: #252525;
+        border: 1px solid #252525;
+      }
+      .operator:active {
+        color: #252525;
+        background-color: #fff;
+        font-size: 22px;
+      }
+      /* RESET BUTTON */
+      .reset {
+        background-color: #e10000;
+        color: white;
+        border: none;
+        border-radius: 14px;
+      }
+      .reset:hover {
+        background-color: #fff;
+        color: #e10000;
+        border: 0.5px solid #252525;
+      }
+      .reset:active {
+        font-size: 22px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="calculator">
+      <div class="calculatorTitle">
+        <h1 class="output">0</h1>
+      </div>
+      <div class="calculatorButtons">
+        <button class="operator" value="+">+</button>
+        <button class="operator" value="-">-</button>
+        <button class="operator" value="*">×</button>
+        <button class="operator" value="/">÷</button>
+        <button id="numbers" value="7">7</button>
+        <button id="numbers" value="8">8</button>
+        <button id="numbers" value="9">9</button>
+        <button id="numbers" value="4">4</button>
+        <button id="numbers" value="5">5</button>
+        <button id="numbers" value="6">6</button>
+        <button id="numbers" value="1">1</button>
+        <button id="numbers" value="2">2</button>
+        <button id="numbers" value="3">3</button>
+        <button id="numbers" class="decimal" value=".">.</button>
+        <button id="numbers" value="0">0</button>
+        <button class="reset" id="resetButton">C</button>
+        <button id="result" class="result operator" value="=">=</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
