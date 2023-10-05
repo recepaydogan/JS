@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accordions</title>
+    <style>
+      body {
+        background-color: #191919;
+        font-family: "Times New Roman", Times, serif;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      .accordion {
+        width: 800px;
+        margin: 90px auto;
+        color: black;
+        background-color: white;
+        padding: 45px 45px;
+        border-radius: 3rem;
+      }
+      .accordion .container {
+        position: relative;
+        margin: 10px 10px;
+      }
+
+      .accordion .label {
+        position: relative;
+        padding: 10px 0;
+        font-size: 30px;
+        color: black;
+        cursor: pointer;
+      }
+      .accordion .label::before {
+        content: "+";
+        color: black;
+        position: absolute;
+        top: 50%;
+        right: -5px;
+        font-size: 30px;
+        transform: translateY(-50%);
+      }
+
+      .accordion .content {
+        position: relative;
+        background: white;
+        height: 0;
+        font-size: 20px;
+        text-align: justify;
+        width: 780px;
+        overflow: hidden;
+        transition: 0.5s;
+      }
+
+      .accordion hr {
+        width: 100;
+        margin-left: 0;
+        border: 1px solid grey;
+      }
+      .accordion .container.active .content {
+        height: 150px;
+      }
+      .content:not(.active) {
+        height: 0px;
+      }
+
+      .accordion .container.active .label::before {
+        content: "-";
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="accordion-body">
+      <div class="accordion">
+        <h1>Main Header</h1>
+        <hr />
+        <div class="container">
+          <div class="label">Content Header</div>
+          <div class="content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
+            suscipit explicabo repellat perspiciatis sint assumenda aliquid, at
+            odit, tenetur, aut commodi! Nostrum, id! Ullam cum minima obcaecati
+            magnam dolorem non, inventore excepturi consectetur explicabo.
+            Molestias.
+          </div>
+        </div>
+        <hr />
+        <div class="container">
+          <div class="label">Content Header</div>
+          <div class="content">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod sed
+            doloribus dicta neque error repellat officiis quidem quisquam
+            facilis. Hic, facilis atque! Voluptatum quod a veniam earum
+            voluptatem cupiditate quaerat dicta dignissimos? Placeat, sint
+            explicabo.
+          </div>
+        </div>
+        <hr />
+        <div class="container">
+          <div class="label">Content Header</div>
+          <div class="content">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod sed
+            doloribus dicta neque error repellat officiis quidem quisquam
+            facilis. Hic, facilis atque! Voluptatum quod a veniam earum
+            voluptatem cupiditate quaerat dicta dignissimos? Placeat, sint
+            explicabo.
+          </div>
+        </div>
+        <hr />
+        <div class="container">
+          <div class="label">Content Header</div>
+          <div class="content">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod sed
+            doloribus dicta neque error repellat officiis quidem quisquam
+            facilis. Hic, facilis atque! Voluptatum quod a veniam earum
+            voluptatem cupiditate quaerat dicta dignissimos? Placeat, sint
+            explicabo.
+          </div>
+        </div>
+        <hr />
+        <div class="container">
+          <div class="label">Content Header</div>
+          <div class="content">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod sed
+            doloribus dicta neque error repellat officiis quidem quisquam
+            facilis. Hic, facilis atque! Voluptatum quod a veniam earum
+            voluptatem cupiditate quaerat dicta dignissimos? Placeat, sint
+            explicabo.
+          </div>
+        </div>
+        <hr />
+        <div class="container">
+          <div class="label">Content Header</div>
+          <div class="content">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod sed
+            doloribus dicta neque error repellat officiis quidem quisquam
+            facilis. Hic, facilis atque! Voluptatum quod a veniam earum
+            voluptatem cupiditate quaerat dicta dignissimos? Placeat, sint
+            explicabo.
+          </div>
+        </div>
+        <hr />
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
