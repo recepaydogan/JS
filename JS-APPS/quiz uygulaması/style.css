@@ -1,0 +1,317 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(8deg, rgba(9,73,74,1) 39%, rgba(37,37,37,1) 62%);
+
+  }
+  button {
+    user-select: none;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 900px;
+    height: 680px;
+    background-color: #007bff;
+    border-radius: 40px;
+  }
+  .starter,
+  .info-box,
+  .quiz-box,
+  .result-box {
+    position: absolute;
+  }
+  .info-box,
+  .quiz-box,
+  .result-box {
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    background-color: #fff;
+  }
+  .starter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .starter button {
+    font-size: 30px;
+    padding: 18px;
+    font-weight: 400;
+    border: none;
+    border-radius: 15px;
+    color: #00bbbb;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+  .starter button:active {
+    font-size: 26px;
+  }
+
+  .active {
+    opacity: 1;
+    z-index: 5;
+    pointer-events: auto;
+  }
+  .questions {
+    margin-top: 30px;
+  }
+  .bar-top {
+    height: 10px;
+    background-color: #007bff;
+    border-radius: 8px;
+    border: none;
+  }
+
+  /*  INFORMATİONS PART */
+  .info-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+  }
+  .info-header {
+    font-size: 2rem;
+    font-weight: bold;
+    border-bottom: 2px solid lightgrey;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  .info {
+    font-size: 18px;
+    margin-bottom: 16px;
+    font-weight: 400;
+  }
+  .info span {
+    color: #007bff;
+    font-weight: bold;
+    user-select: none;
+  }
+  .info-buttons {
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    gap: 5px;
+    padding: 11px;
+    border-top: 2px solid lightgrey;
+  }
+  .info-buttons button {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 15px 30px;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .exit-quiz {
+    border: 1px solid #007bff;
+    color: #007bff;
+    background-color: #fff;
+  }
+  .startQuiz {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+  }
+
+  /*  QUİZ BOX PART */
+  .quiz-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    width: 600px;
+  }
+  .quiz-box .header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .float-header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .timer {
+    display: flex;
+    border-radius: 10px;
+    padding: 5px;
+    align-self: end;
+    font-size: 18px;
+    background-color: #64adff;
+    margin-bottom: 20px;
+  }
+  .time-left-txt {
+    color: #003c7d;
+    padding: 5px;
+  }
+  .times-sec {
+    background-color: #252525;
+    padding: 8px;
+    color: white;
+    border-radius: 10px;
+    font-size: 19px;
+    min-width: 50px;
+    text-align: center;
+  }
+  .title {
+    font-size: 25px;
+    text-align: center;
+  }
+  /* QUİZBOX QUESTION ANDD OPTIONS PART */
+  .question-wrapper {
+    width: 100%;
+    padding: 5px;
+  }
+  .question-txt {
+    font-size: 25px;
+  }
+
+  .option {
+    margin-bottom: 15px;
+    padding: 15px 25px;
+    color: #000;
+    border-radius: 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    background-color: #d4edda;
+    border: 2px solid lightblue;
+    max-height: 52px;
+    align-items: center;
+  }
+
+  .option:hover {
+    background-color: #007bff;
+    color: #fff;
+  }
+  .option-list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+  }
+  .next-question {
+    align-self: end;
+    margin: 10px 20px 0 0;
+    font-size: 15px;
+    padding: 9px;
+    border: 1px solid #007bff;
+    color: #007bff;
+    background-color: #fff;
+    border-radius: 5px;
+    font-weight: 600;
+    opacity: 0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    pointer-events: none;
+  }
+
+  .next-question:hover {
+    background-color: #007bff;
+    color: #fff;
+  }
+  .btn-active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .option.correct {
+    background-color: #76de8d;
+    border: none;
+  }
+  .option.wrong {
+    background-color: #f8d7da;
+    border: none;
+  }
+  .correct-icon {
+    color: #1e7932;
+    height: 100%;
+    font-size: 26px;
+    border: 1px solid #1e7932;
+    border-radius: 50%;
+    padding: 5px 7px;
+  }
+
+  .wrong-icon {
+    color: #a42834;
+    height: 100%;
+    font-size: 26px;
+    border: 1px solid #a42834;
+    border-radius: 50%;
+    padding: 6px 9px;
+  }
+  /*  FOOTER */
+  .question-footer {
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .question-counter {
+    font-size: 18px;
+  }
+
+  .result-box {
+    width: 600px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 20px;
+    transition: none !important;
+  }
+  .result-icon {
+    font-size: 110px;
+  }
+  .count-down {
+    margin-top: 22px;
+  }
+  .count-down span {
+    color: #00bbbb;
+    font-size: 25px;
+    user-select: none;
+  }
+  .directedIn {
+    user-select: none;
+  }
+
+  @media (max-width: 576px) {
+    .info-box {
+      margin: 0 0.6rem;
+    }
+    .quiz-box {
+      width: 379px;
+    }
+    .quiz-box .question-txt {
+      font-size: 20px;
+    }
+    .quiz-box .question-footer {
+      flex-direction: column;
+      width: 100%;
+      justify-content: center;
+    }
+    .quiz-box .next-question {
+      margin: 5px 0;
+      align-self: center;
+    }
+    .result-box {
+      width: 379px;
+      height: 500px;
+    }
+    .count-down {
+      padding: 0px 65px;
+      text-align: center;
+    }
+  }
