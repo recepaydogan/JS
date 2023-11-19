@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Times New Roman", Times, serif;
+  }
+
+  .container {
+    width: 100vw;
+    height: 100vh;
+  }
+  .row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    padding: 15px 40px;
+    column-gap: 40px;
+  }
+  .col {
+    display: grid;
+    grid-template-rows: 70px auto;
+    padding: 30px 40px;
+    margin-top: 100px;
+    background-color: #f0f0f0;
+
+    border-radius: 15px;
+  }
+  .todo-header {
+    background-color: #cc0000;
+    padding: 5px;
+    color: #fff;
+    border-radius: 10px;
+    max-height: 50px;
+    text-align: center;
+  }
+  .in-process-header {
+    background-color: #0d47a1;
+    padding: 5px;
+    color: #fff;
+    border-radius: 10px;
+    max-height: 50px;
+    text-align: center;
+  }
+  .done-header {
+    background-color: #007e33;
+    padding: 5px;
+    color: #fff;
+    border-radius: 10px;
+    text-align: center;
+    max-height: 50px;
+  }
+  .drag-item-list {
+    list-style: none;
+    margin-top: 10px;
+    height: 100%;
+    min-height: 150px;
+  }
+  .todo-content .drag-item {
+    background-color: #ff4444;
+  }
+  .progress-content .drag-item {
+    background-color: #4285f4;
+  }
+  .done-content .drag-item {
+    background-color: #00c851;
+  }
+  .drag-item {
+    color: #fff;
+    cursor: pointer;
+    line-height: 24px;
+    margin-bottom: 5px;
+    width: 100%;
+    outline: none;
+    border: none;
+    max-width: 507px;
+    padding: 9px 0px;
+    border-radius: 10px;
+    text-indent: 20px;
+    user-select: none;
+  }
+  .add-container {
+    display: none;
+    min-height: 100px;
+    width: 100%;
+    background-color: #fff;
+    outline: none;
+    border: none;
+    margin-top: 10px;
+  }
+
+  .adding {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 10px;
+    margin-top: 10px;
+    row-gap: 10px;
+    grid-template-areas:
+      "head head"
+      "myPlusIcon myPlusIcon";
+    column-gap: 10px;
+    align-content: baseline;
+  }
+  .add-item {
+    width: 100%;
+    min-height: 50px;
+    border-radius: 15px;
+
+    color: #fff;
+    padding: 15px 20px;
+    line-break: anywhere;
+    max-height: 250px;
+    overflow: auto;
+    background-color: #252525;
+    max-height: 100px;
+    display: none;
+    grid-area: head;
+  }
+  .btn-save {
+    display: none;
+    font-size: 16px;
+    padding: 9px;
+    border: none;
+    background-color: #252525;
+    color: #fff;
+    border-radius: 7px;
+    cursor: pointer;
+    text-align: center;
+  }
+  .active {
+    display: inline-block !important;
+  }
+  .plus {
+    font-size: 29px;
+    background-color: #252525;
+    color: #fff;
+    padding: 0 9px;
+    cursor: pointer;
+    border-radius: 6px;
+    grid-area: myPlusIcon;
+    justify-self: center;
+    height: 35px;
+    position: absolute;
+  }
+  .back {
+    font-size: 16px;
+    padding: 9px;
+    background-color: #252525;
+    color: #fff;
+    text-align: center;
+
+    cursor: pointer;
+    border-radius: 6px;
+
+    display: none;
+  }
+  .information-modal {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(25, 25, 25, 0.8);
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    display: none;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    z-index: 3;
+  }
+  
+ .informations{
+  z-index: 2;
+ }
+  .err-button {
+    font-size: 17px;
+    padding: 12px 18px;
+    border-radius: 10px;
+    border: none;
+    background-color: #fff;
+    color: #252525;
+    margin-top: 15px;
+    cursor: pointer;
+  }
+
+  .error-modal {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(25, 25, 25, 0.8);
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    display: none;
+    z-index: 3;
+  }
+  .error-text {
+    font-size: 23px;
+  }
+  .info {
+    width: 700px;
+    padding: 35px;
+    border-radius: 30px;
+    background-color: #1a1a1a;
+
+  }
+  .info h2 {
+    text-align: center;
+  }
+  .info-item {
+    list-style: none;
+    font-size: 17px;
+    padding: 10px 15px;
+    margin: 6px 0;
+  }
+  .open-info-modal{
+    font-size: 16px;
+    padding: 9px;
+   
+    background-color: #252525;
+    color: #fff;
+    border-radius: 7px;
+    cursor: pointer;
+    position: absolute;
+   
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%)
+  }

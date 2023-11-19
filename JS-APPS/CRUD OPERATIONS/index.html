@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD Operations</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+NKo+Unjoined:wght@400;500;600&family=Poppins:wght@200;300;400;500;600;700;800&family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="information-modal">
+        <div class="informations">
+          <ul class="info">
+            <h2>Informations</h2>
+            <li class="info-item">
+              1. All operations(Additions,Deletions,Updates) are saved in Local
+              Storage.
+            </li>
+            <li class="info-item">
+              2. You can't add more than 10 tasks in 1 column
+            </li>
+            <li class="info-item">
+              3. If you want to update a task, click on it and change as you
+              wish.
+            </li>
+            <li class="info-item">
+              4. If you want to delete a task, click on it and delete all the
+              words and then click outside
+            </li>
+            <li
+              style="font-size: 23px; margin-top: 20px; text-align: center"
+              class="info-item"
+            >
+              click outside to close the modal
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="error-modal">
+        <p class="error-text">
+          You can't add an empty task or more than 10 tasks in on column!
+        </p>
+        <button class="err-button">Got It</button>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="todo-header"><h1>TODO</h1></div>
+          <div class="todo-content">
+            <ul
+              class="drag-item-list"
+              id="todo-items"
+              ondragover="allowToDrop(event)"
+              ondragenter="dragEnter(0)"
+              ondrop="drop(event)"
+            ></ul>
+          </div>
+        </div>
+        <div class="col">
+          <div class="in-process-header"><h1>In PROGRESS</h1></div>
+          <div class="progress-content">
+            <ul
+              class="drag-item-list"
+              id="progress-items"
+              ondragover="allowToDrop(event)"
+              ondragenter="dragEnter(1)"
+              ondrop="drop(event)"
+            ></ul>
+          </div>
+        </div>
+        <div class="col">
+          <div class="done-header"><h1>DONE</h1></div>
+          <div class="done-content">
+            <ul
+              class="drag-item-list"
+              id="done-items"
+              ondragover="allowToDrop(event)"
+              ondragenter="dragEnter(2)"
+              ondrop="drop(event)"
+            ></ul>
+          </div>
+        </div>
+
+        <div class="adding">
+          <span class="plus">+</span>
+          <div class="add-item" contenteditable="true"></div>
+          <span class="back">Back</span>
+          <button class="btn-save">Kaydet</button>
+        </div>
+        <button class="open-info-modal">Informations</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
